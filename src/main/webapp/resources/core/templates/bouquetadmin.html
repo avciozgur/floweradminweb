@@ -1,0 +1,140 @@
+<div class="jumbotron text-center">
+	<h3>Bouquet Administration</h3>
+
+	<div class="container">
+		<div class="row">
+			<div id="filter-panel" class="collapse filter-panel">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<input type="text" class="form-control input-sm"
+									id="pref-search" placeholder="Bouquet Name">
+							</div>
+							<!-- form group [name] -->
+							<div class="form-group">
+								<div class="checkbox"
+									style="margin-left: 10px; margin-right: 10px;">
+									<label><input type="checkbox"> Active</label>
+								</div>
+							</div>
+							<!-- form group [active] -->
+							<div class="form-group">
+								<label class="filter-col" style="margin-right: 0;"
+									for="pref-orderby">Order by:</label> <select id="pref-orderby"
+									class="form-control">
+									<option>Date</option>
+									<option>Price Asc</option>
+									<option>Popularity</option>
+								</select>
+							</div>
+							<!-- form group [order by] -->
+							<button type="submit" class="btn btn-default filter-col">
+								<span class="glyphicon glyphicon-record"></span>Apply filter
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" data-toggle="collapse"
+				data-target="#filter-panel">
+				<span class="glyphicon glyphicon-cog"></span> Filter Settings
+			</button>
+			<button type="button" class="btn btn-success" data-toggle="modal"
+				data-target="#bouquetmodal">+ New</button>
+				
+														
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="bouquetmodal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Bouquet Form</h4>
+				</div>
+				<div class="modal-body p-l-2">
+					<!-- Bouquet Form content-->
+					<div class="container-fluid">
+					<form class="form-horizontal" role="form" id="bouquetform" onsubmit="saveBouquet()">
+						<div class="form-group">
+							<div class="row-fluid">
+								<label class="control-label col-sm-4" for="name">Name:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="name"
+										placeholder="Enter name">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<label class="control-label col-sm-4" for="description">Description:</label>
+								<div class="col-sm-8">
+									<textarea class="form-control" rows="3" id="description"
+										placeholder="Enter description"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<label class="control-label col-sm-4" for="price">Price:</label>
+								<div class="col-sm-8">
+									<div class="input-group">
+										<span class="input-group-addon">$</span> <input type="text"
+											class="form-control" placeholder="price" id="price">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<label class="control-label col-sm-4" for="fileinfo">Select
+									Image:</label>
+								<div class="col-sm-8">
+									<div class="input-group">
+										<label class="btn btn-primary" for="my-file-selector">
+											<input id="my-file-selector" type="file" style="display: none;">
+											Choose File 
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<label class="control-label col-sm-4" for="fileinfo">is Active:</label>
+								<div class="col-sm-8">
+									<div class="input-group">
+										<div class="checkbox">
+											<label><input type="checkbox" id="isactive">Active</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-8 col-sm-4">
+								<button type="submit" class="btn btn-primary" onsubmit="saveBouquet()">Submit</button>
+							</div>
+						</div>
+					</form>
+					</div> 
+					<!-- Bouquet Form content-->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+</div>
